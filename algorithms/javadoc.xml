@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="javadoc">
+    <target name="javadoc">
+        <javadoc access="public" author="true" classpath="target/test-classes;C:\Users\dlenz\.m2\repository\org\apache\commons\commons-math\2.2\commons-math-2.2.jar;C:\Users\dlenz\.m2\repository\log4j\log4j\1.2.16\log4j-1.2.16.jar;C:\Users\dlenz\.m2\repository\junit\junit\3.8.2\junit-3.8.2.jar" destdir="doc" nodeprecated="false" nodeprecatedlist="false" noindex="false" nonavbar="false" notree="false" packagenames="org.neoninc.dpms.algorithms" source="1.7" sourcepath="src/test/java;src/main/java" splitindex="true" use="true" version="true"/>
+    </target>
+</project>
