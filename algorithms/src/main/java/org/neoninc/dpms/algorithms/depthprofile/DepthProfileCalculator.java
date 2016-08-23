@@ -1,6 +1,6 @@
 package org.neoninc.dpms.algorithms.depthprofile;
 
-//some change
+//change
 
 import java.util.ArrayList;
 import java.util.Collections;
