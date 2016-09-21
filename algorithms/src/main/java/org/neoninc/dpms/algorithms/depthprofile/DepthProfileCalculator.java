@@ -1,6 +1,6 @@
 package org.neoninc.dpms.algorithms.depthprofile;
 
-// Jackie's change
+// Jackie
 
 import java.util.ArrayList;
 import java.util.Collections;
