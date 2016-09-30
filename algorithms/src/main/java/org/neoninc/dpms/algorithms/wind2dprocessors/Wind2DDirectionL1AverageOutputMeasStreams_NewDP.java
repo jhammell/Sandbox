@@ -8,6 +8,7 @@ import org.neoninc.dpms.datastructures.DPMSMeasStreamData;
 import org.neoninc.dpms.datastructures.algorithms.L1AverageOutputMeasStreams_NewDP;
 
 /**
+ * Jackie
  * This class calculates wind direction statistics (mean and variance)
  * for 2D wind data streams.  The calculations are performed differently
  * than standard statistics.
