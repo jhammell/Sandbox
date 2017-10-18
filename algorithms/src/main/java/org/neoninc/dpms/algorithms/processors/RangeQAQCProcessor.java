@@ -47,10 +47,9 @@ public class RangeQAQCProcessor {
 
 	public void compareToThreshold(DPMSMStreamReadout rdot, Double val) {
 		if (val != null) {
-//			if (val.isNaN() || val.isInfinite()) {
-//				input.writeFlagValue(rdot, 1.);
-//			} else 
-			if (input.getMinValueThreshold() != null && val < input.getMinValueThreshold()) {
+			if (val.isNaN() || val.isInfinite()) {
+				input.writeFlagValue(rdot, 1.);
+			} else if (input.getMinValueThreshold() != null && val < input.getMinValueThreshold()) {
 				input.writeFlagValue(rdot, 1.);
 			} else if (input.getMaxValueThreshold() != null && val > input.getMaxValueThreshold()) {
 				input.writeFlagValue(rdot, 1.);

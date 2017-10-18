@@ -185,7 +185,8 @@ public class Wind2DAlgorithmicFunctions {
 		double averageSignedMinimumAngularDistance = adStats.getMean();
 		
 		// Finally, calculate the arithmetic mean & sample variance
-		double arithmeticMean = thetaAvg + averageSignedMinimumAngularDistance;
+		//JLA: US4019: mod 2pidouble arithmeticMean = thetaAvg + averageSignedMinimumAngularDistance;
+		double arithmeticMean = modPositive(thetaAvg + averageSignedMinimumAngularDistance,twoPi);
 		
 		double sumOfSquareDeltas = 0.0;
 		double avgMinAngularDistanceSquared = averageSignedMinimumAngularDistance * averageSignedMinimumAngularDistance;

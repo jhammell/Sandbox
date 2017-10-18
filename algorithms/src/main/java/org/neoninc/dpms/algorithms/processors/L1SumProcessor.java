@@ -73,13 +73,11 @@ public class L1SumProcessor {
 		long stTime = inputDataStream.getEffectiveStartTime().getTime();
 		long edTime = inputDataStream.getEffectiveEndTime().getTime();
 		long intervalInMilli = sumTimeInSecs * 1000;
-		long frequencyInMilli = inputMs.getFrequencyInMilli();
-		ArrayList<Integer> bucketIdxList = new ArrayList<>();
 		
 		//use TreeMap instead of HashMap to get sorted Date key
 		TreeMap<Date, SynchronizedDescriptiveStatistics> sumMap = new TreeMap<Date, SynchronizedDescriptiveStatistics>();
 		DPMSMStreamReadout notNullRdot = null;
-		for (DPMSMStreamReadout rdot : inputMs.getMSReadouts()) {
+		for (DPMSMStreamReadout rdot : inputMs.getPreprocRdotHashMap().values()) {
 			if(rdot == null) {
 				continue;
 			}
@@ -90,13 +88,6 @@ public class L1SumProcessor {
 			long rdotTime = rdot.getReadoutStartTime().getTime();
 			if(rdotTime < stTime || rdotTime > edTime) {
 				continue;
-			}
-			//same purpose as createPreprocessedMap, for same bucket only keep one point
-			int bucketIdx = (int) ((rdotTime-stTime)/frequencyInMilli);
-			if(bucketIdxList.contains(bucketIdx)) {
-				continue;
-			} else {
-				bucketIdxList.add(bucketIdx);
 			}
 			
 			Double val = rdot.getValueForValueId(inputDataStream.getMeanInputValId());
